@@ -25,10 +25,11 @@ const images = [
 ]
 
 export const create = mutation({
-    args: {
-        orgId: v.string(),
-        title: v.string(),
+    args: { 
+        orgId: v.string(), 
+        title: v.string(), 
     },
+
     handler: async (ctx, args) => {
         const identity = await ctx.auth.getUserIdentity();
 
@@ -50,7 +51,10 @@ export const create = mutation({
 })
 
 export const remove = mutation({
-    args: { id: v.id("boards")},
+    args: { 
+        id: v.id("boards")
+    },
+
     handler: async (ctx, args) => {
         const identity = await ctx.auth.getUserIdentity()
 
@@ -78,7 +82,11 @@ export const remove = mutation({
 })
 
 export const update = mutation({
-    args: { id: v.id("boards"), title: v.string()},
+    args: { 
+        id: v.id("boards"),
+        title: v.string()
+    },
+
     handler: async ( ctx, args ) => {
 
         const identity = await ctx.auth.getUserIdentity()
@@ -106,7 +114,11 @@ export const update = mutation({
 })
 
 export const favorite = mutation({
-    args: {id: v.id("boards"), orgId: v.string()},
+    args: {
+        id: v.id("boards"), 
+        orgId: v.string()
+    },
+
     handler: async ( ctx, args ) => {
 
         const identity = await ctx.auth.getUserIdentity()
@@ -147,7 +159,10 @@ export const favorite = mutation({
 }) 
 
 export const unfavorite = mutation({
-    args: {id: v.id("boards")},
+    args: {
+        id: v.id("boards")
+    },
+    
     handler: async ( ctx, args ) => {
 
         const identity = await ctx.auth.getUserIdentity()

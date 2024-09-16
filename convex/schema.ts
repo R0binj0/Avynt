@@ -30,7 +30,6 @@ export default defineSchema({
         boardId: v.id("boards"),
         roomName: v.string(), 
         createdBy: v.string(),
-        createdAt: v.number(),
     })
     .index("by_board", ["boardId"]),
 

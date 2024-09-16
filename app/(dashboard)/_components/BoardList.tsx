@@ -6,7 +6,7 @@ import EmptyBoards from "./EmptyBoards";
 import EmptyFavorites from "./EmptyFavorites";
 import EmptySearch from "./EmptySearch";
 import BoardCard from "./board-card";
-import NewBoardButton from "./nex-board-button";
+import NewBoardButton from "./new-board-button";
 
 interface BoardListProps {
     orgId: string;
