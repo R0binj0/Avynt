@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Overlay from "./overlay";
-import { FormatDateOptions, formatDistance, formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow } from "date-fns";
 import { useAuth } from "@clerk/nextjs";
 import BoardFooter from "./board-footer";
 import { Skeleton } from "@/components/ui/skeleton";

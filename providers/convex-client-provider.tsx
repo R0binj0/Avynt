@@ -14,7 +14,9 @@ export const ConvexClientProvider = ({ children }: { children: React.ReactNode }
         <ClerkProvider>
             <ConvexProviderWithClerk useAuth={useAuth} client={convex}>
                 <Unauthenticated>
-                    <SignInButton />
+                    <div className="flex items-center justify-center h-full">
+                        <SignInButton />
+                    </div>
                 </Unauthenticated>
                 <Authenticated>
                     {children}   

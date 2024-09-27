@@ -64,15 +64,13 @@ const RenameModal = () => {
                     <Input disabled={pending} required maxLength={60} value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Board title"></Input>
                     <DialogFooter>
                         <DialogClose asChild>
-                            <>
-                                <Button type="button" variant="outline">
-                                    Cancel
-                                </Button>
-                                <Button disabled={pending} type="submit" className="hover:bg-green-800">
-                                    Save
-                                </Button>
-                            </>
+                            <Button type="button" variant="outline">
+                                Cancel
+                            </Button>
                         </DialogClose>
+                        <Button disabled={pending} type="submit" className="hover:bg-[var(--green)]">
+                            Save
+                        </Button>
                     </DialogFooter>
                 </form>
             </DialogContent>

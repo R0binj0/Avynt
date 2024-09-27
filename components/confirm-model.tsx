@@ -50,7 +50,7 @@ export const ConfirmModal = ({
                     <AlertDialogCancel>
                         Cancel
                     </AlertDialogCancel>
-                    <AlertDialogAction className="hover:bg-red-800" disabled={disabled} onClick={handleConfirm}>
+                    <AlertDialogAction className="hover:bg-[var(--red)]" disabled={disabled} onClick={handleConfirm}>
                         Confirm
                     </AlertDialogAction>
                 </AlertDialogFooter>

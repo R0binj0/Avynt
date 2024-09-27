@@ -1,3 +1,5 @@
+/* prettier-ignore-start */
+
 /* eslint-disable */
 /**
  * Generated `api` utility.
@@ -16,6 +18,9 @@ import type {
 import type * as board from "../board.js";
 import type * as boards from "../boards.js";
 import type * as chatroom from "../chatroom.js";
+import type * as feedback from "../feedback.js";
+import type * as questions from "../questions.js";
+import type * as quiz from "../quiz.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -29,6 +34,9 @@ declare const fullApi: ApiFromModules<{
   board: typeof board;
   boards: typeof boards;
   chatroom: typeof chatroom;
+  feedback: typeof feedback;
+  questions: typeof questions;
+  quiz: typeof quiz;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
@@ -38,3 +46,5 @@ export declare const internal: FilterApi<
   typeof fullApi,
   FunctionReference<any, "internal">
 >;
+
+/* prettier-ignore-end */

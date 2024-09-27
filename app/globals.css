@@ -7,10 +7,12 @@ html,body,:root{
 }
 
 :root {
-  --background: #000000;
-  --background-light: #171717;
+  --background: #252525;
+  --background-light: #171717; /* Actiually darker */
   --foreground: #f7f7f7;
   --text: #f7f7f7;
+  --green: #055b20;
+  --red: #730e0e;
 }
 
 .logo-text-neon{
@@ -26,11 +28,68 @@ html,body,:root{
       0 0 151px #00a;
 }
 
+.feedback-neon {
+  margin: 300px auto 0;
+  width: 150px;
+  height: 100px;
+  background: var(--background);
+}
+
+.feedback-neon:before,
+.feedback-neon:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #ff0000, #ff0000, #c53b3b, #d25656, #f16c6c, #ff0000,
+      #ff0000, #c53b3b, #d25656, #f16c6c);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+  border-radius: 4px;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.feedback-neon:after {
+  filter: blur(50px);
+}
+
+.feedback-bounce{
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    bottom: 20px;
+  }
+
+  50% {
+    bottom: 10px;
+  }
+}
+
 .sitegrid {
   margin: 0;
   padding: 0;
   background-size: 16px 16px;
-  background-image: radial-gradient(circle, #2a2a2a 1px, rgba(0, 0, 0, 0) 1px);
+  background-image: radial-gradient(circle, #171717 1px, rgba(0, 0, 0, 0) 1px);
 }
 
 body {

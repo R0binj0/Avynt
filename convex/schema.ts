@@ -7,7 +7,7 @@ export default defineSchema({
         orgId: v.string(),
         authorId: v.string(),
         authorName: v.string(),
-        imageUrl: v.string(),
+        imageUrl: v.string()
     })
     .index("by_org", ["orgId"])
     .searchIndex("search_title", {
@@ -25,7 +25,6 @@ export default defineSchema({
     .index("by_user_board", ["userId", "boardId"])
     .index("by_user_board_org", ["userId", "boardId", "orgId"]),
 
-
     chatRooms: defineTable({
         boardId: v.id("boards"),
         roomName: v.string(), 
@@ -41,4 +40,24 @@ export default defineSchema({
         timestamp: v.number(),
     })
     .index("by_room", ["roomId"]),
+
+    feedback: defineTable({
+        userId: v.string(),
+        quizId: v.id("quiz"),
+        responses: v.record(v.string(), v.string()),
+    })
+    .index("by_user_quiz", ["userId", "quizId"]),
+
+    quiz: defineTable({
+        title: v.string(),
+        active: v.boolean(),
+    }),
+
+    questions: defineTable({
+        quizId: v.id("quiz"),
+        questionText: v.string(),
+        questionType: v.string(),
+    })
+    .index("by_quiz", ["quizId"]),
+
 })

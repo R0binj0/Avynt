@@ -1,7 +1,7 @@
 "use client"
 
 import { DropdownMenuContentProps } from "@radix-ui/react-dropdown-menu"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger} from "@/components/ui/dropdown-menu"
 import { Link2, Pencil, Trash2 } from "lucide-react"
 import { toast } from "sonner"
 import { useApiMutation } from "@/hooks/use-api-mutation"
