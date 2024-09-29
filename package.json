@@ -29,6 +29,7 @@
     "date-fns": "^3.6.0",
     "dropdown-menu": "^0.1.1",
     "lucide-react": "^0.439.0",
+    "nanoid": "^5.0.7",
     "next": "^14.2.8",
     "next-themes": "^0.3.0",
     "paper": "^0.12.18",
