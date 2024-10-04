@@ -89,7 +89,7 @@ html,body,:root{
   margin: 0;
   padding: 0;
   background-size: 16px 16px;
-  background-image: radial-gradient(circle, #171717 1px, rgba(0, 0, 0, 0) 1px);
+  background-image: radial-gradient(circle, #515151 1px, rgba(0, 0, 0, 0) 1px);
 }
 
 body {

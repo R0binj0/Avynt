@@ -9,7 +9,8 @@ export interface HintProps {
     alignOffset?: number;
 }
 
-const Hint = ({ label, children, side, align, sideOffset, alignOffset }: HintProps) => {
+const Hint = ({ label, children, side , align, sideOffset, alignOffset }: HintProps) => {
+    
     return ( 
         <TooltipProvider>
             <Tooltip delayDuration={100}>

@@ -9,6 +9,7 @@ interface ToolButtonProps{
     onClick: () => void
     isActive?: boolean
     isDisabeld?: boolean
+    side?: string
 }
 
 const ToolButton = ({
@@ -16,10 +17,11 @@ const ToolButton = ({
     children,
     onClick,
     isActive,
-    isDisabeld
+    isDisabeld,
+    side
 }:ToolButtonProps) => {
     return ( 
-        <Hint label={label} side="right" sideOffset={14}>
+        <Hint label={label} side={"right"} sideOffset={14}>
             <Button disabled={isDisabeld} onClick={onClick} size="icon" variant={isActive ? "boardActive" : "board"}>
                 { children }
             </Button>
