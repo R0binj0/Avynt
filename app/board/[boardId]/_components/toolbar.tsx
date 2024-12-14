@@ -1,6 +1,8 @@
-import { CiViewBoard, CiPen, CiBoxList, CiLink, CiViewTable, CiImageOn, CiFileOn, CiChat2, CiRoute, CiLocationArrow1, CiRedo, CiUndo, CiText, CiStop1 } from "react-icons/ci";
+import { CiViewBoard, CiPen, CiBoxList, CiLink, CiViewTable, CiImageOn, CiFileOn, CiChat2, CiRoute, CiLocationArrow1, CiRedo, CiUndo, CiText } from "react-icons/ci";
 import ToolButton from "./tool-button";
 import { CanvasMode, CanvasState, LayerTypes } from "@/types/canvas";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import Hint from "@/components/hint";
 
 interface ToolbarProps {
     canvasState: CanvasState
@@ -35,11 +37,11 @@ const Toolbar = ({
                         <CiLocationArrow1 className="text-2xl"/>
                     </ToolButton>
                 </div>
-                <div>
+{/*                 <div>
                     <ToolButton label="Section" onClick={() => {}} isActive={false}>
                         <CiViewBoard className="text-2xl"/>
                     </ToolButton>
-                </div>
+                </div> */}
                 <div>
                     <ToolButton label="Text" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Text})} 
                     isActive={
@@ -50,24 +52,50 @@ const Toolbar = ({
                     </ToolButton>
                 </div>
                 <div>
-                    <ToolButton label="Shapes" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Rectangle})} 
-                    isActive={
-                        canvasState.mode === CanvasMode.Inserting &&
-                        canvasState.layerType === LayerTypes.Rectangle
-                        }>
-                        {/* For Ellipse
-                        onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Ellipse})} isActive={
-                        canvasState.mode === CanvasMode.Inserting &&
-                        canvasState.layerType === LayerTypes.Elipse
-                        }> */}
-                        <CiStop1 className="text-2xl"/>
-                    </ToolButton>
+                    <Popover>
+                        <PopoverTrigger className="h-10 w-10 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:border-[var(--foreground)] border-2 border-[var(--background-light)]">
+                            <Hint sideOffset={14} side="right" label="Shapes">
+                                <rect className="border-[1.5px] w-4 h-4"></rect>   
+                            </Hint>
+                        </PopoverTrigger>
+                        <PopoverContent className="flex flex-col items-center absolute left-8 -bottom-10 border-none bg-[var(--background-light)] text-[var(--text)] w-12 h-27">
+                            <div>
+                                <ToolButton label="Rectangle" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Rectangle})} 
+                                isActive={
+                                    canvasState.mode === CanvasMode.Inserting && 
+                                    canvasState.layerType === LayerTypes.Rectangle}>
+                                    <rect className="border-[1.5px] w-4 h-4"></rect>
+                                </ToolButton>
+                            </div>
+                            <div>
+                                <ToolButton label="Ellipse" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Ellipse})} 
+                                isActive={
+                                    canvasState.mode === CanvasMode.Inserting &&
+                                    canvasState.layerType === LayerTypes.Ellipse
+                                }>
+                                    <ellipse className="border-[1.5px] rounded-full w-4 h-4"></ellipse>
+                                </ToolButton>
+                            </div>
+{/*                             <div>
+                                <ToolButton label="Triangle" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Triangle})} 
+                                isActive={
+                                    canvasState.mode === CanvasMode.Inserting &&
+                                    canvasState.layerType === LayerTypes.Triangle
+                                }>
+                                    <div className="triangle"></div>
+                                </ToolButton>
+                            </div> */}
+                        </PopoverContent>
+                    </Popover>
                 </div>
-                <div>
-                    <ToolButton label="Connect" onClick={() => {}} isActive={false}>
+{/*                 <div>
+                    <ToolButton label="Connect" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Connect})} 
+                    isActive={
+                        canvasState.mode === CanvasMode.Inserting && 
+                        canvasState.layerType === LayerTypes.Connect}>
                         <CiRoute className="text-2xl"/>
                     </ToolButton>
-                </div>
+                </div> */}
                 <div>
                     <ToolButton label="Draw" onClick={() => setCanvaState({ mode: CanvasMode.Pencil,})} 
                     isActive={
@@ -77,36 +105,51 @@ const Toolbar = ({
                     </ToolButton>
                 </div>
                 <div>
-                    <ToolButton label="To-Do" onClick={() => {}} isActive={false}>
+                    <ToolButton label="To-Do" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.ToDo})} 
+                    isActive={
+                        canvasState.mode === CanvasMode.Inserting && 
+                        canvasState.layerType === LayerTypes.ToDo}>
                         <CiBoxList className="text-2xl"/>
                     </ToolButton>
                 </div>
                 <div>
-                    <ToolButton label="Link" onClick={() => {}} isActive={false}>
+                    <ToolButton label="Link" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Link})} 
+                    isActive={
+                        canvasState.mode === CanvasMode.Inserting && 
+                        canvasState.layerType === LayerTypes.Link}>
                         <CiLink className="text-2xl"/>
                     </ToolButton>
                 </div>
                 <div>
-                    <ToolButton label="Table" onClick={() => {}} isActive={false}>
+                    <ToolButton label="Table" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Table})} 
+                    isActive={
+                        canvasState.mode === CanvasMode.Inserting && 
+                        canvasState.layerType === LayerTypes.Table}>
                         <CiViewTable className="text-2xl"/>
                     </ToolButton>
                 </div>
                 <div>
-                    <ToolButton label="Comment" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Note})} 
+                    <ToolButton label="Comment" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Comment})} 
                         isActive={
                         canvasState.mode === CanvasMode.Inserting &&
-                        canvasState.layerType === LayerTypes.Note
+                        canvasState.layerType === LayerTypes.Comment
                         }>
                         <CiChat2 className="text-2xl"/>
                     </ToolButton>
                 </div>
                 <div>
-                    <ToolButton label="Image" onClick={() => {}} isActive={false}>
+                    <ToolButton label="Image" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Image})} 
+                    isActive={
+                        canvasState.mode === CanvasMode.Inserting && 
+                        canvasState.layerType === LayerTypes.Image}>
                         <CiImageOn className="text-2xl"/>
                     </ToolButton>
                 </div>
                 <div>
-                    <ToolButton label="Upload File" onClick={() => {}} isActive={false}>
+                    <ToolButton label="Upload File" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.File})} 
+                    isActive={
+                        canvasState.mode === CanvasMode.Inserting && 
+                        canvasState.layerType === LayerTypes.File}>
                         <CiFileOn className="text-2xl"/>
                     </ToolButton>
                 </div>

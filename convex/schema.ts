@@ -7,13 +7,20 @@ export default defineSchema({
         orgId: v.string(),
         authorId: v.string(),
         authorName: v.string(),
-        imageUrl: v.string()
+        imageUrl: v.string(),
     })
     .index("by_org", ["orgId"])
     .searchIndex("search_title", {
         searchField: "title",
         filterFields: ["orgId"]
     }),
+
+    shareLink: defineTable({
+        boardId: v.id("boards"),
+        link: v.string(),
+        shareType: v.string(),
+    })
+    .index("by_board", ["boardId"]),
 
     userFavorites: defineTable({
         orgId: v.string(),

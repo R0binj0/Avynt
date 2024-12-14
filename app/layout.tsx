@@ -3,6 +3,8 @@ import "./globals.css";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import { Toaster } from "sonner";
 import ModalProvider from "@/providers/modal-provider";
+import { Suspense } from "react";
+import { Loading } from "@/components/auth/loading";
 
 export const metadata: Metadata = {
   title: "Renduit Manager",
@@ -17,11 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ConvexClientProvider>
-          <Toaster></Toaster>
-          <ModalProvider></ModalProvider>
-          {children}
-        </ConvexClientProvider>
+        <Suspense fallback={<Loading></Loading>}>
+          <ConvexClientProvider>
+            <Toaster></Toaster>
+            <ModalProvider></ModalProvider>
+            {children}
+          </ConvexClientProvider>
+        </Suspense>
       </body>
     </html>
   );
