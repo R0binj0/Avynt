@@ -32,7 +32,7 @@ const Settings = ({
                     <CiSettings className="text-2xl"/>
                 </Button>
             </PopoverTrigger>
-            <PopoverContent className="bg-[var(--background-light)] text-[var(--text)] w-[20vw]">
+            <PopoverContent className="bg-[var(--background-dark)] text-[var(--text)] w-[20vw]">
                 <h2 className="pb-2 text-2xl border-b-[1px] border-[var(--background)]">{data.title}</h2>
                 <div className="flex flex-col gap-2 py-2">
                     <Button variant="board" size="sm" className="text-base justify-start  font-normal w-full" onClick={() => onOpen(data._id, data.title)}>

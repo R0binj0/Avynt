@@ -55,7 +55,7 @@ const OrgSidebar = ({ quizId }:OrgSidebarProps) => {
     };
 
     return ( 
-        <div className="hidden lg:flex flex-col items-center space-y-6 w-[206px] pl-5 pt-5 border-r-[2px] border-[var(--background-light)] pr-5">
+        <div className="hidden lg:flex flex-col items-center space-y-6 w-[206px] pl-5 pt-5 border-r-[2px] border-[var(--background-dark)] pr-5">
             <Link href="/">
                 <div className="flex items-center justify-center gap-x-2">
                     <Logo></Logo>

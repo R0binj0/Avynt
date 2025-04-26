@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.4.1",
+    "@heroicons/react": "^2.2.0",
     "@liveblocks/client": "^2.7.1",
     "@liveblocks/node": "^2.7.1",
     "@liveblocks/react": "^2.7.1",

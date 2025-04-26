@@ -436,15 +436,15 @@ const Canvas = ({ boardId }: CanvasProps) => {
             <div className="absolute top-2 right-1 z-50">
                <Settings boardId={boardId}></Settings> 
             </div>
-            {/* <Chat boardId={boardId}></Chat> */}
-            <div className="absolute bottom-4 right-16 bg-[var(--background-light)] rounded-md flex gap-y-1 items-center shadow-md">
+            <Chat boardId={boardId}></Chat>
+            <div className="absolute bottom-4 right-16 bg-[var(--background-dark)] rounded-md flex gap-y-1 items-center shadow-md">
                 <Hint label="Zoom In" side={"top"} sideOffset={14}>
-                    <Button onClick={zoomIn} size="icon" className="hover:border-[var(--foreground)] border-2 border-[var(--background-light)]">
+                    <Button onClick={zoomIn} size="icon" className="hover:border-[var(--foreground)] border-2 border-[var(--background-dark)]">
                         <CiZoomIn className="text-2xl"></CiZoomIn>
                     </Button>
                 </Hint>
                 <Hint label="Zoom Out" side={"top"} sideOffset={14}>
-                    <Button onClick={zoomOut} size="icon" className="hover:border-[var(--foreground)] border-2 border-[var(--background-light)]">
+                    <Button onClick={zoomOut} size="icon" className="hover:border-[var(--foreground)] border-2 border-[var(--background-dark)]">
                         <CiZoomOut className="text-2xl"></CiZoomOut>
                     </Button>
                 </Hint>

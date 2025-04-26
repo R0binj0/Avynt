@@ -25,7 +25,7 @@ const Chat = ({ boardId }: ChatProps) => {
     };
 
     return ( 
-        <div onClick={toggleWidth} className={cn("fixed top-[50%] -translate-y-[50%] right-0 bg-[var(--background-light)] z-20 flex h-full px-1 items-center rounded-l-xl", isExpanded ? "w-[40%]" : "w-12", )} >
+        <div onClick={toggleWidth} className={cn("fixed top-[50%] -translate-y-[50%] right-0 bg-[var(--background-dark)] z-20 flex h-full px-1 items-center rounded-l-xl", isExpanded ? "w-[40%]" : "w-12", )} >
             {!isExpanded && (
                 <Button variant="board" size="icon">
                     <CiSquareChevLeft className="text-2xl"/>

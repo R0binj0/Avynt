@@ -24,7 +24,7 @@ const Toolbar = ({
 }: ToolbarProps) => {
     return ( 
         <div className="absolute top-[50%] -translate-y-[50%] left-2 flex flex-col gap-y-4">
-            <div className="bg-[var(--background-light)] rounded-md flex gap-y-1 flex-col items-center shadow-md">
+            <div className="bg-[var(--background-dark)] rounded-md flex gap-y-1 flex-col items-center shadow-md">
                 <div>
                     <ToolButton label="Mouse" onClick={() => setCanvaState({ mode: CanvasMode.None,})} 
                     isActive={
@@ -53,12 +53,12 @@ const Toolbar = ({
                 </div>
                 <div>
                     <Popover>
-                        <PopoverTrigger className="h-10 w-10 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:border-[var(--foreground)] border-2 border-[var(--background-light)]">
+                        <PopoverTrigger className="h-10 w-10 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:border-[var(--foreground)] border-2 border-[var(--background-dark)]">
                             <Hint sideOffset={14} side="right" label="Shapes">
                                 <rect className="border-[1.5px] w-4 h-4"></rect>   
                             </Hint>
                         </PopoverTrigger>
-                        <PopoverContent className="flex flex-col items-center absolute left-8 -bottom-10 border-none bg-[var(--background-light)] text-[var(--text)] w-12 h-27">
+                        <PopoverContent className="flex flex-col items-center absolute left-8 -bottom-10 border-none bg-[var(--background-dark)] text-[var(--text)] w-12 h-27">
                             <div>
                                 <ToolButton label="Rectangle" onClick={() => setCanvaState({ mode: CanvasMode.Inserting, layerType: LayerTypes.Rectangle})} 
                                 isActive={
@@ -154,7 +154,7 @@ const Toolbar = ({
                     </ToolButton>
                 </div>
             </div>
-            <div className="bg-[var(--background-light)] rounded-md flex flex-col items-center shadow-md">
+            <div className="bg-[var(--background-dark)] rounded-md flex flex-col items-center shadow-md">
                 <div>
                     <ToolButton isDisabeld={!canUndo} label="Undo" onClick={undo}>
                         <CiUndo className="text-2xl"/>

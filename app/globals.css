@@ -8,9 +8,10 @@ html,body,:root{
 
 :root {
   --background: #252525;
-  --background-light: #171717; /* Actiually darker */
+  --background-dark: #171717;
   --foreground: #f7f7f7;
   --text: #f7f7f7;
+  --text-foreground: #000000;
   --black: #000300;
   --green: #055b20;
   --red: #730e0e;

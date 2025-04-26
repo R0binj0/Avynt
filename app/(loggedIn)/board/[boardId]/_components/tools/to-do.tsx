@@ -109,7 +109,7 @@ export const ToDo = ({
         onMouseLeave={() => setIsHovering(false)}
       >
         {items.map((item, index) => (
-          <div key={index} className="flex items-center gap-2 border-b border-[var(--background-light)]">
+          <div key={index} className="flex items-center gap-2 border-b border-[var(--background-dark)]">
             <Checkbox
               checked={item.checked}
               className="w-6 h-6 checked:bg-blue-500"

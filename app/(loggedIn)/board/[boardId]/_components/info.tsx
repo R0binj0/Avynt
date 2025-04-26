@@ -32,7 +32,7 @@ const Info = ({
     if (!data) return <Loading></Loading>
     
     return ( 
-        <div className="absolute top-2 left-2 bg-[var(--background-light)] rounded-md h-10 flex items-center justify-start shadow-md">
+        <div className="absolute top-2 left-2 bg-[var(--background-dark)] rounded-md h-10 flex items-center justify-start shadow-md">
             <Hint label="Back to boards" side="bottom" sideOffset={10}>
                 <Button variant="board" size="sm">
                     <Link href="/">
